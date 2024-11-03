@@ -78,30 +78,30 @@ Spring Boot made configuring Spring much easier with it's _auto-configuration_ f
 
   * The **`@ConditionalOnClass`** configuration is used to create a bean if only a specified class is present on the class path. Commonly used in auto-configuration classes to ensure that certain beans are only created if related dependencies are available.
 
-        Example:
+    Example:
 
-        ```java
-        @Configuration
-        @ConditionalOnClass(DataSource.class)
-        class MySQLConfig{
-            // ... code ...
-        }
-        ```
+    ```java
+    @Configuration
+    @ConditionalOnClass(DataSource.class)
+    class MySQLConfig{
+        // ... code ...
+    }
+    ```
 
   * The **`@ConditionalOnMissingClass`** annotation is used to create a bean only if a specified class is not present on the classpath.
 
-        Example:
+    Example:
 
-        ```java
-        @Configuration
-        @ConditionalOnMissingClass("com.example.SomeLibrary")
-        public class FallbackConfig {
-            @Bean
-            public FallbackService fallbackService() {
-                // Configure and return FallbackService bean
-            }
+    ```java
+    @Configuration
+    @ConditionalOnMissingClass("com.example.SomeLibrary")
+    public class FallbackConfig {
+        @Bean
+        public FallbackService fallbackService() {
+            // Configure and return FallbackService bean
         }
-        ```
+    }
+    ```
 
 * ## **@ConditionalOnBean** and **@ConditionalOnMissingBean**
 
